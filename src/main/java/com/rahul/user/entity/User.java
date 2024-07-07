@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -30,4 +31,7 @@ public class User {
 
     @OneToMany(mappedBy = "followedUser")
     private Set<Follower> following = new HashSet<>();
+
+    @OneToMany
+    private List<Discussion> discussionList;
 }

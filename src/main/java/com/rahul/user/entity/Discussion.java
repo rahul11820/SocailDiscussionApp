@@ -35,5 +35,9 @@ public class Discussion {
     @OneToMany
     private List<DiscussionLike> likes;
 
+    @ManyToOne
+    @JoinColumn(name = "byUserId", referencedColumnName = "id")
+    private User user;
+
     private Long createdOn;
 }
