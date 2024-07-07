@@ -22,7 +22,7 @@ public class DiscussionLikeService {
     @Autowired
     private UserRepository userRepository;
 
-    public String likeOrUnlikeDiscussion(String discussionId, Long userId) {
+    public String likeOrUnlikeDiscussion(Long discussionId, Long userId) {
         DiscussionLike existingLike = discussionLikeRepository.findByDiscussionIdAndUserId(discussionId, userId);
         if (existingLike != null) {
             discussionLikeRepository.delete(existingLike);

@@ -46,7 +46,7 @@ public class DiscussionController {
     }
 
     @PostMapping("/{id}/likes")
-    public void likeDiscussion(@PathVariable String id) {
+    public void likeDiscussion(@PathVariable Long id) {
         Long userId = SecurityUtils.getCurrentUserId();
         discussionLikeService.likeOrUnlikeDiscussion(id, userId);
     }
